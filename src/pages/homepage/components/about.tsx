@@ -29,7 +29,7 @@ export default function AboutSection() {
         <>
             {/* Background Gradient */}
             <section
-                id="about"
+                id="about-us"
                 className="py-16 lg:py-24 bg-white dark:bg-[#1a1a1a]"
             >
                 <motion.div
