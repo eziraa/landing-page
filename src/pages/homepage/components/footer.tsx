@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const footerVariants = {
@@ -40,13 +41,13 @@ export default function Footer() {
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
               <a href="#" aria-label="Facebook">
-                <FaFacebook className="w-5 h-5 hover:text-accent-500" />
+                <Facebook className="w-5 h-5 hover:text-accent-500" />
               </a>
               <a href="#" aria-label="LinkedIn">
-                <FaLinkedin className="w-5 h-5 hover:text-accent-500" />
+                <Linkedin className="w-5 h-5 hover:text-accent-500" />
               </a>
               <a href="#" aria-label="Instagram">
-                <FaInstagram className="w-5 h-5 hover:text-accent-500" />
+                <Instagram className="w-5 h-5 hover:text-accent-500" />
               </a>
             </div>
           </motion.div>

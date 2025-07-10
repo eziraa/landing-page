@@ -1,6 +1,6 @@
 import React from 'react'
 import ThemeToggle from '../ThemeToggle';
-import { Menu, X } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import EPCLogo from '../../../components/logo';
 import { GoSun } from 'react-icons/go';
 import { FaMoon } from 'react-icons/fa';
@@ -95,11 +95,11 @@ const Header = ({
                      onClick={toggleTheme}
                      className="  border-gray-300 dark:border-gray-600 "
                    >
-                     <GoSun
+                     <Sun
                        className=" hidden dark:inline cursor-pointer hover:text-opacity-75 active:text-opacity-100"
                        size={20}
                      />
-                     <FaMoon
+                     <Moon
                        className=" inline dark:hidden cursor-pointer hover:text-opacity-75 active:text-opacity-100"
                        size={20}
                      />
