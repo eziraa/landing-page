@@ -65,7 +65,7 @@ export function Label({ htmlFor, children, className = "" }: { htmlFor: string; 
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.3 }}
           className="w-full dark:bg-[#232226]rounded-md    relative max-w-xl"
-          onClick={e=>e.preventDefault()}
+          onClick={e=>e.stopPropagation()}
         >
           <Card>
             <CardContent>
