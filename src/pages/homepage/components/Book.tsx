@@ -67,7 +67,7 @@ export function Label({ htmlFor, children, className = "" }: { htmlFor: string; 
           className="w-full dark:bg-[#232226]rounded-md    relative max-w-xl"
           onClick={e=>e.stopPropagation()}
         >
-          <Card>
+          <Card className=" overflow-y-auto max-h-[94vh]">
             <CardContent>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Request Your Free Inspection</h3>
               <form className="space-y-6">
@@ -125,7 +125,7 @@ export function Label({ htmlFor, children, className = "" }: { htmlFor: string; 
                   By submitting this form, you agree to be contacted by Ecovia Pest Control regarding your inspection request.
                 </p>
               </form>
-              <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-white">
+              <button onClick={onClose} className="absolute right-4 top-4 md:top-4 md:right-4 text-gray-500 hover:text-gray-800 dark:text-white">
                 &#10005;
               </button>
             </CardContent>
