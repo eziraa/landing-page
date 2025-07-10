@@ -23,12 +23,12 @@ function App() {
         <Routes>
           
           <Route
-            path="/home"
+            path="/"
             element={
               <LateralLanding />
             }
           />
-          <Route path="*" element={<Navigate to="/home" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </div>

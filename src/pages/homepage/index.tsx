@@ -18,6 +18,7 @@ import Footer from "./components/footer";
 import CTA from "./components/CTA";
 import Hero from "./components/hero";
 import Header from "./components/header";
+import BookInspectionModal from "./components/Book";
 
 const features = [
   {
@@ -69,7 +70,7 @@ export default function LateralLanding() {
   const [activeFaqIndex, setActiveFaqIndex] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState("intro");
   const [showLoginButton, setShowLoginButton] = useState(true);
-  const [showDemoModal, setShowDemoModal] = useState(false);
+  const [openBookModal, setOpenBookModel] = useState(false);
 
 
 
@@ -203,14 +204,14 @@ export default function LateralLanding() {
   // Close modal with ESC key and backdrop click
   useEffect(() => {
     const handleEscKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && showDemoModal) {
-        setShowDemoModal(false);
+      if (e.key === "Escape" && openBookModal) {
+        setOpenBookModel(false);
       }
     };
 
     document.addEventListener("keydown", handleEscKey);
     return () => document.removeEventListener("keydown", handleEscKey);
-  }, [showDemoModal]);
+  }, [openBookModal]);
 
 
   return (
@@ -229,11 +230,11 @@ export default function LateralLanding() {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         isDarkMode={isDarkMode}
-
+        setOpenBookModel={setOpenBookModel}
       />
 
       {/* Hero Section */}
-      <Hero isDarkMode={isDarkMode} setShowDemoModal={setShowDemoModal} />
+      <Hero isDarkMode={isDarkMode} setOpenBookModel={setOpenBookModel} />
 
       {/* About Sections */}
       <AboutSection />
@@ -271,11 +272,15 @@ export default function LateralLanding() {
       </section>
 
       {/* CTA Section */}
-      <CTA isDarkMode={isDarkMode} />
+      <CTA isDarkMode={isDarkMode} setOpenBookModel ={setOpenBookModel}/>
 
 
       <Footer />
-
+     {
+      openBookModal && (
+        <BookInspectionModal onClose={()=>setOpenBookModel(false)} />
+      )
+     }
     </div>
   );
 }

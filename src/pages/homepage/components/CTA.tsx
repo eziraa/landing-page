@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-export default function CTA({ isDarkMode }: { isDarkMode: boolean }) {
+export default function CTA({ isDarkMode, setOpenBookModel }: { isDarkMode: boolean, setOpenBookModel: (value: boolean) => void }) {
   return (
     <section className="py-16 lg:py-24 mb-24 relative bg-accent-500 text-white text-center overflow-hidden">
       <div className="container mx-auto px-4 flex flex-col items-center sm:px-6 lg:px-8">
@@ -30,16 +30,14 @@ export default function CTA({ isDarkMode }: { isDarkMode: boolean }) {
           transition={{ duration: 0.5, delay: 0.6, type: "spring", stiffness: 120 }}
           className="w-full sm:w-auto"
         >
-          <Link to="/book" tabIndex={-1}>
-            <button
-              onClick={() => {
-                window.location.href = "/book";
-              }}
-              className="text-white font-bold bg-[#03b5a6] hover:bg-transparent hover:border px-6 py-3 transition-all duration-300 text-sm rounded-full hover:bg-[#38CBDD] hover:text-white border-white hover:border-[#38CBDD] mb-6 md:mb-2 w-[80%] sm:w-auto"
-            >
-              BOOK AN INSPECTION NOW
-            </button>
-          </Link>
+          <button
+            onClick={() => {
+              setOpenBookModel(true)
+            }}
+            className="text-white font-bold bg-[#03b5a6] hover:bg-transparent hover:border px-6 py-3 transition-all duration-300 text-sm rounded-full hover:bg-[#38CBDD] hover:text-white border-white hover:border-[#38CBDD] mb-6 md:mb-2 w-[80%] sm:w-auto"
+          >
+            BOOK AN INSPECTION NOW
+          </button>
         </motion.div>
       </div>
 

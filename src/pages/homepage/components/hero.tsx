@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 interface Props{
     isDarkMode: boolean;
-    setShowDemoModal: (show: boolean) => void;
+    setOpenBookModel: (show: boolean) => void;
 }
-export default function Hero({ isDarkMode, setShowDemoModal }: Props) {
+export default function Hero({ isDarkMode, setOpenBookModel }: Props) {
   return (
     <section
       id="intro"
@@ -51,7 +51,7 @@ export default function Hero({ isDarkMode, setShowDemoModal }: Props) {
           transition={{ delay: 0.6, duration: 0.5 }}
         >
           <button
-            onClick={() => window.location.href = '#book'}
+            onClick={() => setOpenBookModel(true)}
             className="bg-[#03b5a6] px-6 md:px-10 hover:bg-transparent border border-[#03b5a6] text-white text-sm  py-3 rounded-full transition-all duration-300 hover:scale-105"
           >
             Book an Inspection
